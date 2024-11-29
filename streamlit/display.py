@@ -35,7 +35,7 @@ def upload_button():
     return file
 
 def summarize_button():
-    st.write("Do you want to what is this file?")
+    st.write("Do you want to know what is this file about?")
     # Since I want the predict button returns any value after "clicking action"
     # I make the st.button as return.
     # Hence, this value will be passed as a logic to trigger steps to predict model.
