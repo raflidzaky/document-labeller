@@ -41,6 +41,11 @@ def main():
 
             if keywords_str:
                 progress_bar.progress(100)  # Complete progress
+
+                # Empty status text to make user experience better 
+                # by decreasing time-consumed to scroll the keywords results
+                status_text.empty() 
+
                 st.write(f'Your document is all related to these words:')
                 st.write(keywords_str)
         
