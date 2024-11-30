@@ -30,18 +30,19 @@ def main():
             status_text = st.empty()
 
             pdf_text = text_parser.extract_text_from_pdf(pdf_file=file)
-            status_text.text("Your file is already parsed, proceeding with prediction...")
-            progress_bar.progress(25)  # Update progress
+            if pdf_text:
+                status_text.text("Your file is already parsed, proceeding with prediction...")
+                progress_bar.progress(25)  # Update progress
 
             # Run prediction
             returns = process_docs.simplify_docs(sentence=pdf_text)
             keywords = [item[0] for item in returns]
             keywords_str = ', '.join(keywords)
-            progress_bar.progress(100)  # Complete progress
-            st.write(f'Your document is all related to these words:')
-            st.write(keywords_str)
-            print(keywords_str)
 
+            if keywords_str:
+                progress_bar.progress(100)  # Complete progress
+                st.write(f'Your document is all related to these words:')
+                st.write(keywords_str)
         
 if __name__ == "__main__":
     text_corpora.download_corpora()
