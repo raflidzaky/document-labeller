@@ -17,7 +17,6 @@ def main():
 
     if file:
     # If the image is being uploaded, we ask user to click predict button
-        time.sleep(2.0)
         process_button = display.summarize_button()
 
         # Ir the predict button is done clicked, then start doing inference
