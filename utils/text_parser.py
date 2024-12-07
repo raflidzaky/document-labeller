@@ -1,4 +1,3 @@
-import fitz  
 import io
 import PyPDF2
 
